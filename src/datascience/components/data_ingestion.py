@@ -2,7 +2,7 @@ import os
 import urllib.request as request
 from src.datascience import logger
 import zipfile
-from src.datascience.entity import DataIngestionConfig
+from src.datascience.entity.config_entity import DataIngestionConfig
 
 class DataIngestion:
     def __init__(self,config:DataIngestionConfig):
@@ -21,6 +21,9 @@ class DataIngestion:
         os.makedirs(unzip_path,exist_ok=True)
         with zipfile.ZipFile(self.config.local_data_file,'r') as zip_ref:
             zip_ref.extractall(unzip_path)
+
+
+
 
 
 
